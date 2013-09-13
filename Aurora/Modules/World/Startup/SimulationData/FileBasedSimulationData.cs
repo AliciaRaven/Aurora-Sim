@@ -175,6 +175,9 @@ namespace Aurora.Modules
                                                       info.ObjectCapacity == 0
                                                           ? "50000"
                                                           : info.ObjectCapacity.ToString()));
+
+            //AR: Include Region Agent Limit In Console Update
+            info.RegionSettings.AgentLimit = int.Parse(MainConsole.Instance.Prompt("Agent Limit: ", info.RegionSettings.AgentLimit.ToString()));
             
             if (m_scene != null)
             {
