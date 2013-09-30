@@ -125,12 +125,7 @@ namespace Aurora.Modules.Scripting
                     {
                         //Creation EmailMessage
 
-                        string fromEmailAddress;
-
-                        if (scene != null && objectID != UUID.Zero)
-                            fromEmailAddress = objectID.ToString() + "@" + m_HostName;
-                        else
-                            fromEmailAddress = "no-reply@" + m_HostName;
+                        string fromEmailAddress = "no-reply@" + m_HostName;
 
                         EmailMessage emailMessage = new EmailMessage
                                                         {
@@ -146,10 +141,16 @@ namespace Aurora.Modules.Scripting
                         if (scene != null)
                         {
                             // If Object Null Dont Include Object Info Headers (Offline IMs)
-                            if(objectID != UUID.Zero)
+                            if (objectID != UUID.Zero)
+                            {
                                 emailMessage.BodyText = "Object-Name: " + LastObjectName +
                                                         "\nRegion: " + LastObjectRegionName + "\nLocal-Position: " +
                                                         LastObjectPosition + "\n\n";
+                            }
+                            else
+                            {   //AR: Offline IM EMail Body Header
+                                emailMessage.BodyText = "You have an Instant Message waiting on Spellscape Grid.\n\n";
+                            }
 
                             emailMessage.BodyText += emailMessage.BodyText;
                         }
