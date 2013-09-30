@@ -145,17 +145,13 @@ namespace Aurora.Modules.Scripting
                             {
                                 emailMessage.BodyText = "Object-Name: " + LastObjectName +
                                                         "\nRegion: " + LastObjectRegionName + "\nLocal-Position: " +
-                                                        LastObjectPosition + "\n\n";
+                                                        LastObjectPosition + "\n\n" + body;
                             }
                             else
                             {   //AR: Offline IM EMail Body Header
-                                emailMessage.BodyText = "You have an Instant Message waiting on Spellscape Grid.\n\n";
+                                emailMessage.BodyText = "You have an Instant Message waiting on Spellscape Grid.\n\n" + body;
                             }
-
-                            emailMessage.BodyText += emailMessage.BodyText;
                         }
-
-                        
 
                         //Config SMTP Server
                         //Set SMTP SERVER config
