@@ -234,9 +234,9 @@ namespace Aurora.Modules.Estate
             m_scene.RegionInfo.RegionSettings.AllowDamage = allow_damage;
             m_scene.RegionInfo.RegionSettings.RestrictPushing = restrict_pushobject;
             m_scene.RegionInfo.RegionSettings.AllowLandResell = allow_land_resell;
-            //AR: Prevent Region Owner Setting Their AgentLimit and Prim Bonus
+            //AR: Prevent Region Owner Setting Their AgentLimit
             //m_scene.RegionInfo.RegionSettings.AgentLimit = agent_limit;
-            //m_scene.RegionInfo.RegionSettings.ObjectBonus = prim_bonus;
+            m_scene.RegionInfo.RegionSettings.ObjectBonus = prim_bonus;
             m_scene.RegionInfo.RegionSettings.MinimumAge = minimum_agent_age;
             if (sim_access <= 13)
                 m_scene.RegionInfo.RegionSettings.Maturity = 0;
